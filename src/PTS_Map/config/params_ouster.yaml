@@ -1,0 +1,53 @@
+# printing time
+verbose_time: true
+debug_process: true
+
+# params for i/o topic
+input_pcd_topic: "/cloud_registered_lidar"  # from fastlio
+input_imu_topic: "/imu/data"
+odometry_topic: "/Odometry"  # from fastlio
+gravity_topic: "/imu_gravity"
+path_topic: "/history_path"
+
+# params for PTS-Map size
+occ_width: 1000 # nav_msgs::occupancygrid width refers to x direction 
+occ_height: 600 # nav_msgs::occupancygrid height refers to y direction
+occ_origin_z: 0.0 # m, z offset for visualize the grid
+occ_origin_x: -9.0 #-18.75 # -width*res*0.5 = center
+
+
+grid_size: 0.15 # occ resolution
+
+# params for input cropping
+min_range: 0.9
+max_range: 8.0 # 8.0
+crop_z: 2.0 # 2.5 gravity aligned z-value upper crop
+
+# params for plane fitting
+plane_fitting_iter: 2
+min_pts_num: 25
+d_th: 0.1
+neighbor_cell: 2 # 1: 3x3, 2: 5x5 ...
+
+# param for ground surface state updates
+ground_surface_state_propagation_noise: 0.01
+uncertainty_criteria: 1 # 0: products of diagonal, 1: determinant
+uncertainty_thr: 0.01 # 0.01 square root of determinant
+
+
+# params for above-ground elevation state updates
+EHR_max_dist: 0.8 # robot's height + margin
+EHR_min_dist: -0.1 # -margin
+max_number_maintain: 100
+temporal_gamma: 0.9
+
+# params for cost
+weights_coeff: [0.35, 0.5, 0.15] # slope, elevation, step
+slope_thr: 25.0 # degree
+elevation_thr: 0.4 # m
+step_thr: 45.0 # degree -> tan(45) = 1
+constraint_thr: 99.0 # 0 ~ 100
+
+# param for visualizing normal arrows
+visualize_near_normal: true
+visualize_normal_radius: 6.0 # if visualize_near_noirmal = True

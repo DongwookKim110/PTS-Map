@@ -1,0 +1,6 @@
+<launch>
+	<rosparam command="load" file="$(find pts_map)/config/params_ouster.yaml" />
+	<include file="$(find fast_lio)/launch/mapping_ouster.launch"/> 
+	<node pkg="pts_map" type="PTS_Map" name="PTS_Map"  output="screen"/> 
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find pts_map)/rviz/pts_map.rviz" output="screen"/>
+</launch>
