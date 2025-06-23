@@ -76,7 +76,7 @@ step_thr: 45.0 # degree -> tan(45) = 1
 constraint_thr: 99.0 # 0 ~ 100
 ```
 
-- To run PTS-Map, execute the following command:
+- To run PTS-Map, execute the following command (download short sample bag: https://drive.google.com/file/d/1xny8k7hyl1AGdl6xHZWzUFcsNVp4ODiB/view?usp=drive_link):
 ```
 source devel/setup.bash
 roslaunch pts_map run_ouster.launch
