@@ -17,7 +17,7 @@ PTS-Map is built on a modified version of FAST-LIO2 (https://github.com/hku-mars
   publisher={IEEE}
 }
 ```
-Before building this package, you must first build livox_ros_driver (https://github.com/Livox-SDK/livox_ros_driver).
+Before building this package, you must first build livox_ros_driver (https://github.com/Livox-SDK/livox_ros_driver) to use FAST-LIO2.
 To set up the repository, follow the steps below:
 
 ```
