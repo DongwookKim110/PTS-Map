@@ -4,7 +4,7 @@ This is the official implementation of the paper:
 
 
 ## Install
-PTS-Map is built on a modified version of FAST-LIO2 (https://github.com/hku-mars/FAST_LIO), which we use to obtain the gravitational vector from the IMU.
+PTS-Map is built on a modified version of FAST-LIO2 (https://github.com/hku-mars/FAST_LIO), which we use to obtain the pose and gravitational vector from the IMU.
 ```
 @article{xu2022fast,
   title={Fast-lio2: Fast direct lidar-inertial odometry},
@@ -81,6 +81,10 @@ constraint_thr: 99.0 # 0 ~ 100
 source devel/setup.bash
 roslaunch pts_map run_ouster.launch
 ```
+<p align="center">
+  <img src="PTS_Map/image/traversability_map.png" width="49%" height="300px"/>
+  <img src="PTS_Map/image/normals.png" width="49%" height="300px"/>
+</p>
 
 ## Reference
 If you use PTS-Map in your research, please cite the following:
