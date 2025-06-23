@@ -14,8 +14,6 @@ occ_width: 1000 # nav_msgs::occupancygrid width refers to x direction
 occ_height: 600 # nav_msgs::occupancygrid height refers to y direction
 occ_origin_z: 0.0 # m, z offset for visualize the grid
 occ_origin_x: -9.0 #-18.75 # -width*res*0.5 = center
-
-
 grid_size: 0.15 # occ resolution
 
 # params for input cropping

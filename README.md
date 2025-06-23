@@ -31,8 +31,7 @@ catkin_make -DCATKIN_WHITELIST_PACKAGES=""
 ## Usage
 We provide launch files configured for experiments using an Ouster LiDAR and an Xsens IMU.
 If you are using your own robot, please update the following configuration files accordingly:
-- LiDAR-IMU configuration: Modify thirdpary/FAST_LIO/config/ouster.yaml
-Update the topics and sensor settings to match your hardware.
+- LiDAR-IMU Configuration: Edit 'thirdpary/FAST_LIO/config/ouster.yaml' to align the topic names and sensor settings with your system.
 ```
 common:
     lid_topic:  "/ouster/points"
@@ -49,14 +48,32 @@ mapping:
                   0,0,1]
 ```
 
-- PTS-Map parameters: Update PTS_Map/config/params_ouster.yaml to suit your robot's parameters.
+- PTS-Map parameters: Update 'PTS_Map/config/params_ouster.yaml' to suit your robot's parameters.
 ```
-EMR_max_dist: 0.8 # robot's height + margin
+# params for PTS-Map size
+occ_width: 1000 # nav_msgs::occupancygrid width refers to x direction 
+occ_height: 600 # nav_msgs::occupancygrid height refers to y direction
+occ_origin_z: 0.0 # m, z offset for visualize the grid
+occ_origin_x: -9.0 #-18.75 # -width*res*0.5 = center
+grid_size: 0.15 # occ resolution
 
+# params for input cropping
+min_range: 0.9
+max_range: 8.0 # 8.0
+crop_z: 2.0 # 2.5 gravity aligned z-value upper crop
+
+# params for above-ground elevation state updates
+EHR_max_dist: 0.8 # robot's height + margin
+EHR_min_dist: -0.1 # -margin
+max_number_maintain: 100
+temporal_gamma: 0.9
+
+# params for cost
 weights_coeff: [0.35, 0.5, 0.15] # slope, elevation, step
 slope_thr: 25.0 # degree
 elevation_thr: 0.4 # m
 step_thr: 45.0 # degree -> tan(45) = 1
+constraint_thr: 99.0 # 0 ~ 100
 ```
 
 - To run PTS-Map, execute the following command:
