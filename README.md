@@ -80,6 +80,7 @@ constraint_thr: 99.0 # 0 ~ 100
 ```
 source devel/setup.bash
 roslaunch pts_map run_ouster.launch
+rosbag play sample.bag
 ```
 <p align="center">
   <img src="PTS_Map/image/traversability_map.png" width="49%" height="300px"/>
