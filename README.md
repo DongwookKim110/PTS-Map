@@ -1,4 +1,4 @@
-# PTS-Map
+# PTS-Map: Probabilistic Terrain State Map for Uncertainty-Aware Traversability Mapping in Unstructured Environments
 This is the official implementation of the paper:
 "PTS-Map: Probabilistic Terrain State Map for Uncertainty-Aware Traversability Mapping in Unstructured Environments"
 
